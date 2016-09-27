@@ -34,7 +34,6 @@ def main( argv ):
 def updateStatus( repo, pr, status ):
     print( 'Setting status: {0}.'.format( status ) )
     if status == 'success':
-        print( 'This says success' )
         repo.create_status(
             sha=pr.head.sha,
             state='success',
@@ -42,7 +41,6 @@ def updateStatus( repo, pr, status ):
             context='Bamboo'
         )
     else:
-        print( 'This says failed' )
         repo.create_status(
             sha=pr.head.sha,
             state='failure',
